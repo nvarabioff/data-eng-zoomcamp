@@ -119,3 +119,43 @@ Converted `upload-data.ipynb` to a Python script `ingest-data.py` that can be ru
             --table_name=yellow_taxi_data \
             --url=https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz
     ```
+
+## Video 5: Running Postgres and pgAdmin with Docker-Compose
+
+*Summary: This video demonstrates how to use Docker Compose to run PostgreSQL and pgAdmin containers together.*
+
+Previous: run multiple different docker containers with different commands inside the same docker network. Not very convenient.
+
+Now: Specify 1 yaml file with all the containers and their configurations.
+
+Docker Compose: configuration for multiple containers in a single file.
+
+1. Run the following command to start the containers defined in `docker-compose.yml`:
+
+    ```bash
+    docker-compose up
+    ```
+
+    *Connect at localhost:8080 in your browser and login with credentials.*
+
+2. Configure new pgAdmin server connection as described in Video 3.
+
+    Name: Docker localhost
+    Host: pgdatabase
+    Port: 5432
+    Username: root
+    Password: root
+
+3. Shut down the containers with:
+
+    ```bash
+    docker-compose down
+    ```
+
+4. Run in detached mode with:
+
+    ```bash
+    docker-compose up -d
+    ```
+
+    *This allows you to run the containers in the background.*
