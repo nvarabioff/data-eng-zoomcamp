@@ -94,3 +94,28 @@
     - **Port**: `5432`
     - **Username**: `root`
     - **Password**: `root`
+
+## Video 4: Dockerize ingestion script
+
+*Summary: This video shows how to convert the Jupyter notebook for data ingestion into a Python script and run it in a Docker container.*
+
+Converted `upload-data.ipynb` to a Python script `ingest-data.py` that can be run from a Docker container.
+
+1. Build and run `ingest-data.py` Docker container
+
+    ```bash
+    docker build -t taxi_ingest:v001 .
+    ```
+
+    ```bash
+    docker run -it \
+        --network=pg-network \
+        taxi_ingest:v001 \
+            --user=root \
+            --password=root \
+            --host=pg-database \
+            --port=5432 \
+            --db=ny_taxi \
+            --table_name=yellow_taxi_data \
+            --url=https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz
+    ```
