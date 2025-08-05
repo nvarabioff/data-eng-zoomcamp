@@ -1,2 +1,9 @@
+# data
 data/
 ny_taxi_postgres_data/
+
+# terraform
+keys/
+.terraform/
+*.tfstate
+*.tfstate.backup
