@@ -144,3 +144,19 @@
    b. From terminal, run `sudo shutdown now`.
 
    c. Once you restart the instance, it will have a new external IP. Update the `HostName` in `~/.ssh/config` file accordingly.
+
+## Video 1.4.2:  Using Github Codespaces
+
+1. Create a new repository on Github (public with README)
+
+2. Go to Codespaces tab and create a new codespace. Select the repo you just created.
+
+3. Once the codespace is created, you can see a VSCode environment in your browser.
+
+4. Open in VSCode desktop by clicking the nav bar at the top left.
+
+5. Make sure GitHub Codespaces VSCode extension is installed.
+
+6. There are many packages and libraries installed (eg. Python, Docker) and you can download others using normal CLI downloads (eg. Terraform. Jupyter notebooks).
+
+7. You can git commit and push changes to the repo from the codespace UI.
